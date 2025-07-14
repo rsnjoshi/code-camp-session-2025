@@ -1,6 +1,0 @@
-Our AI agent automatically creates a Glossary of terms and uses it to ensure certain terms are translated consistently throughout the text. Everything happens automatically, without any manual intervention, but you can also view, change, or add terms to the Glossary through our dashboard.
- 
-Consider this original text in English, to be translated into Spanish:
-Our launch of the Uber Wallet improved cash flow, allowing us to reach the break-even point sooner. Let's analyze our supply chain and benchmark against our competitors, identifying how to boost our ROI and ensure stakeholder support.
-
-However, we might want to keep some terms in English, while translating others into specific Spanish terms. Here's how the Glossary could look:
