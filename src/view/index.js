@@ -1,4 +1,4 @@
-class View {
+export default class View {
   constructor(data, options) {
     this.data = data;
     this.options = options;
@@ -15,19 +15,7 @@ class View {
   }
 
   getEvents() {
-    return {
-      ".calculator__body-key": {
-        click: function () {
-          console.log("hello");
-        },
-      },
-      ".calculator": {
-        hover: function () {
-          console.log(this);
-          console.log("calculator hovered");
-        },
-      },
-    };
+    return {};
   }
 
   getTemplateContext() {
@@ -40,6 +28,32 @@ class View {
     };
   }
 
+  onBeforeRender() {
+    return;
+  }
+
+  onRender() {
+    return;
+  }
+
+  render(el) {
+    this.onBeforeRender();
+
+    const block = document.createElement("div");
+    block.innerHTML = this.getTemplate()(this.getTemplateContext());
+
+    el.innerHTML = "";
+
+    el.appendChild(block);
+
+    this.$el = el.querySelector("div");
+
+    this.attachAttributes();
+    this.addDomEvents();
+
+    this.onRender();
+  }
+
   addDomEvents() {
     const events = this.getEvents();
     for (const [selector, eventMap] of Object.entries(events)) {
@@ -48,6 +62,13 @@ class View {
           element.addEventListener(event, handler.bind(this));
         });
       }
+    }
+  }
+
+  attachAttributes() {
+    const attributes = this.getAttributes();
+    for (const [key, value] of Object.entries(attributes)) {
+      this.$el.setAttribute(key, value);
     }
   }
 }
