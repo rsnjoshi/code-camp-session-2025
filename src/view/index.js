@@ -3,10 +3,10 @@ export default class View {
     this.data = data;
     this.options = options;
     this.$el = null;
-    this.initialize();
+    this.initialize(data, options);
   }
 
-  initialize() {
+  initialize(data, options) {
     // Initialization logic can be added here
   }
 

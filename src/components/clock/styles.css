@@ -1,0 +1,20 @@
+.clock {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    text-align: center;
+}
+
+.clock__frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+.hour,
+.minute,
+.second {
+    margin-left: 15px;
+    margin-right: 15px;
+}

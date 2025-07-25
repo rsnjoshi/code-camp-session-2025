@@ -1,9 +1,16 @@
 import "./styles.css";
 import Calculator from "./components/calculator/index";
+import Clock from "./components/clock";
 
-const calculator_roots = document.querySelectorAll(".calc");
+const root = document.getElementById("root");
 
-calculator_roots.forEach((calc) => {
-  const calculator = new Calculator();
-  calculator.render(calc);
+const clock = new Clock(null, {
+  areButtonsVisible: true,
 });
+
+const calculator = new Calculator(null, {
+  displayClock: true,
+});
+
+calculator.render(root);
+// clock.render(root);
